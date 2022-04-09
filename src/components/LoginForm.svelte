@@ -1,11 +1,12 @@
 <script>
   import { fitsh } from 'fitsh';
   import { navigate } from "svelte-navigator";
+  import userStore from '../stores/userStore';
 
   let email;          // let >>>>>>>>>> var
   let password;
  
- async function login(){
+  async function login(){
     // const res = await fetch("http://localhost:3000/login", {
     //   method: 'POST',
     //   headers: {
@@ -23,6 +24,8 @@
       email: email,
       password: password,
     });
+
+    $userStore = response;
 
     localStorage.setItem('userId', response.id);
 
