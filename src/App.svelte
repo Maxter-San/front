@@ -15,9 +15,10 @@
 	// $: autologin();
 </script>
 
-<Header />
 
 <Router>
+	<Header />
+
 	<Route path="/" component={Index} />
 	<Route path="/login" component={Login} />
 	<Route path="/sign-up" component={SignUp} />

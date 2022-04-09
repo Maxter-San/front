@@ -1,5 +1,6 @@
 <script>
   import { fitsh } from "fitsh"
+  import AddProductControls from "../components/AddProductControls.svelte";
 
   export let productId;
 
@@ -20,4 +21,5 @@
   cargando...
 {:else}
   {JSON.stringify(product)}
+  <AddProductControls productId={productId} />
 {/if}
