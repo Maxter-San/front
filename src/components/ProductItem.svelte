@@ -1,14 +1,17 @@
 <script>
+  import {Link} from "svelte-navigator";
   export let product;
 </script>
 
-<div class="item">
-  <div class="image-container">
-    <img src={product.photo} alt='imagen {product.name}' />
+<Link to="/product/{product.id}">
+  <div class="item">
+    <div class="image-container">
+      <img src={product.photo} alt='imagen {product.name}' />
+    </div>
+    <h1 class="a">{product.name}</h1>
+    <h2>{product.description}</h2>
   </div>
-  <h1 class="a">{product.name}</h1>
-  <h2>{product.description}</h2>
-</div>
+</Link>
 
 <style>
   .item {

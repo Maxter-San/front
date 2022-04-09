@@ -3,7 +3,6 @@
 	import Index from "./routes/Index.svelte";
 	import Login from "./routes/Login.svelte";
 	import Product from "./routes/Product.svelte";
-
 </script>
 
 <Router>
