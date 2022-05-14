@@ -10,14 +10,13 @@
       password: detail.password.value,
     });
 
-    if(response.error){
+    if(response.error) {
       alert(response.error);
       return;
     }
 
     $userStore = response.user;
     localStorage.setItem('userId', response.id);
-    debugger
     navigate("/");  
   };
 </script>
