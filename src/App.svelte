@@ -5,7 +5,7 @@
 	import Login from "./routes/Login.svelte";
 	import Product from "./routes/Product.svelte";
 	import SignUp from "./routes/SignUp.svelte";
-
+	import { MaterialApp } from 'svelte-materialify';
 
 	// function autologin() {
 	// 	const userId = localStorage.getItem('userId');
@@ -15,12 +15,12 @@
 	// $: autologin();
 </script>
 
-
-<Router>
-	<Header />
-
-	<Route path="/" component={Index} />
-	<Route path="/login" component={Login} />
-	<Route path="/sign-up" component={SignUp} />
-	<Route path="/product/:productId" component={Product} />
-</Router>
+<MaterialApp teme="ligth"> 
+	<Router>
+		<Header />
+		<Route path="/" component={Index} />
+		<Route path="/login" component={Login} />
+		<Route path="/sign-up" component={SignUp} />
+		<Route path="/product/:productId" component={Product} />
+	</Router>
+</MaterialApp>

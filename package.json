@@ -8,6 +8,7 @@
     "start": "sirv public --no-clear -s"
   },
   "devDependencies": {
+    "@beyonk/svelte-carousel": "^2.9.0",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "rollup": "^2.3.4",
@@ -15,12 +16,12 @@
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
-    "svelte": "^3.0.0",
-    "svelte-carousel": "^1.0.17-rc4"
+    "svelte": "^3.0.0"
   },
   "dependencies": {
     "fitsh": "^1.3.0",
     "sirv-cli": "^2.0.0",
+    "svelte-materialify": "^0.3.11",
     "svelte-navigator": "^3.1.5"
   }
 }
