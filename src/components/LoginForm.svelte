@@ -1,39 +1,41 @@
 <script>
-  import { fitsh } from 'fitsh';
-  import { navigate } from "svelte-navigator";
-  import userStore from '../stores/userStore';
+  import { createEventDispatcher } from 'svelte';
+  import validateLoginAcount from '../utils/validateLoginAcount';
+  import validateLoginPassword from '../utils/validateLoginPassword';
 
-  let email;          // let >>>>>>>>>> var
-  let password;
- 
-  async function login(){
-    // const res = await fetch("http://localhost:3000/login", {
-    //   method: 'POST',
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     email: email,
-    //     password: password,
-    //   })
-    // });
+  const dispatch = createEventDispatcher();
 
-    // const json = await res.json();
-    const response = await fitsh('http://localhost:3000/login').post({
-      email: email,
-      password: password,
+  const acount = {value: '', error: ''};
+  const password = {value: '', error: ''};
+
+  async function login() {
+    acount.error = validateLoginAcount(acount.value);
+    password.error = validateLoginPassword(password.value);
+
+    if(acount.error) return;
+    if(password.error) return;
+
+    dispatch('submit', {
+      acount,
+      password,
     });
-
-    $userStore = response;
-
-    localStorage.setItem('userId', response.id);
-
-    navigate("/");
- }
+  }
 </script>
 
-<input type="text" bind:value={email} placeholder="email" />
-<input type="password" bind:value={password} placeholder="password" />
+<div>
+  <input type="text" bind:value={acount.value} placeholder="email" />
+  {#if acount.error}
+  <div>{acount.error}</div>
+  {/if}
+</div>
+<br />
+
+<div>
+  <input type="password" bind:value={password.value} placeholder="password" />
+  {#if password.error}
+  <div>{password.error}</div>
+  {/if}
+</div>
+
 <br />
 <button on:click={login}>Iniciar sesion</button>
