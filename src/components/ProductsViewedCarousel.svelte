@@ -18,18 +18,31 @@
 
 <style>
   section {
+    flex: 1;
     display: flex;
-    gap: 6px
+    overflow: auto;
+  }
+
+  .box {
+    display: flex;
+    min-height: min-content;
+    gap: 6px;
+  }
+
+  .item {
+    width: calc(100% / 3);
   }
 </style>
 
 {#if $userStore}
-  <section>
+  <section class="box">
     {#each products as product}
-      <ProductItem
-        product={product}
-        stringDescription="Tu ultimo producto visto"
-      />
+      <div class="item">
+        <ProductItem
+          product={product}
+          stringDescription="Tu ultimo producto visto"
+        />
+      </div>
     {/each}
   </section>
 {/if}

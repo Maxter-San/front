@@ -1,7 +1,7 @@
 <script>
   import { fitsh } from 'fitsh';
   import ProductItem from '../components/ProductItem.svelte';
-  import Carousel from '@beyonk/svelte-carousel';
+
   import userStore from '../stores/userStore';
 
   export let filters;
