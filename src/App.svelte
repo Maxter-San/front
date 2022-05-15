@@ -7,12 +7,11 @@
 	import SignUp from "./routes/SignUp.svelte";
 	import { MaterialApp } from 'svelte-materialify';
 
-	// function autologin() {
-	// 	const userId = localStorage.getItem('userId');
-	// 	if (!userId) return;
-	// }
-
-	// $: autologin();
+	//function autologin() {
+	//	const userId = localStorage.getItem('userId');
+	//	if (!userId) return;
+	//}
+	//$: autologin();
 </script>
 
 <MaterialApp teme="ligth"> 

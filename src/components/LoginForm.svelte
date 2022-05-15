@@ -22,6 +22,7 @@
   }
 </script>
 
+<br/><br/><br/><br/><br/>
 <div>
   <input type="text" bind:value={acount.value} placeholder="email" />
   {#if acount.error}
