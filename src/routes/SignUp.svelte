@@ -19,7 +19,7 @@
     }
 
     $userStore = response.user;
-    localStorage.setItem('userId', response.id);
+    localStorage.setItem('userId', response.user.id);
     navigate("/");
   };
 </script>

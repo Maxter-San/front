@@ -26,6 +26,7 @@
 
 </script>
 
+<br/><br/><br/><br/><br/>
 {#if loading}
   cargando...
 {:else}

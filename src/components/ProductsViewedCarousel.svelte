@@ -7,7 +7,6 @@
 
   $: if($userStore) {
     const userId = $userStore.id;
-
     request('productsViewed').post({
       userId: userId,
     }).then((response) => {
