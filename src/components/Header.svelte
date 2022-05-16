@@ -48,7 +48,7 @@
     <SkipToContent />
   </svelte:fragment>
 
-  <HeaderGlobalAction icon={ShoppingCart} />
+  <!--<HeaderGlobalAction icon={ShoppingCart} /> -->
 
   <HeaderNav>
     <HeaderNavItem href="/" text="Inicio" />
