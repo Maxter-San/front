@@ -11,6 +11,7 @@
   $: fitsh('http://localhost:3000/products').get(filters).then((response) => {
     products = response;
   });
+  
 </script>
 
 <style>
@@ -37,7 +38,6 @@
       <div class="item">
         <ProductItem 
           product={product}
-          stringDescription="Producto más vendido"
         />
       </div>
     {/each}

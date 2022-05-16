@@ -3,14 +3,12 @@
   import { Card, CardText } from 'svelte-materialify';
 
   export let product;
-  export let stringDescription;
 </script>
 
 <Link to="/product/{product.id}">
   <div class="card-container">
     <Card raised>
       <CardText>
-        {stringDescription}
         <div class="image-container">
           <img src={product.photo} alt='imagen {product.name}' />
         </div>
@@ -39,10 +37,6 @@
     width: 100%;
     height: 300px;
     object-fit: contain;
-  }
-
-  .a {
-    color:black;
   }
 
   .image-container {
