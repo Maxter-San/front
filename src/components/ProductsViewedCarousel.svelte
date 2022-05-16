@@ -3,16 +3,19 @@
   import ProductItem from '../components/ProductItem.svelte';
   import request from '../utils/request';
 
+  export let filters;
+
   let products = [];
 
   $: if($userStore) {
     const userId = $userStore.id;
     request('productsViewed').post({
       userId: userId,
+      limit: filters,
     }).then((response) => {
       products = response;
     });
-  }
+  };
 </script>
 
 <style>
@@ -34,14 +37,15 @@
 </style>
 
 {#if $userStore}
-  <section class="box">
-    {#each products as product}
-      <div class="item">
-        <ProductItem
-          product={product}
-          stringDescription="Tu ultimo producto visto"
-        />
-      </div>
-    {/each}
+  <section>
+    <div class="box">
+      {#each products as product}
+        <div class="item">
+          <ProductItem 
+            product={product}
+          />
+        </div>
+      {/each}
+    </div>
   </section>
 {/if}
