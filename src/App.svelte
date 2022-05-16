@@ -6,12 +6,17 @@
 	import Product from "./routes/Product.svelte";
 	import SignUp from "./routes/SignUp.svelte";
 	import { MaterialApp } from 'svelte-materialify';
+	import userStore from './stores/userStore';
+	import { fitsh } from "fitsh";
 
-	//function autologin() {
-	//	const userId = localStorage.getItem('userId');
-	//	if (!userId) return;
-	//}
-	//$: autologin();
+	function autologin() {
+		const userId = localStorage.getItem('userId');
+		if (!userId) return;
+		fitsh(`http://localhost:3000/loggedUser`)(userId).get().then((data) => {
+    	$userStore = data;
+  	});
+	};
+	$: autologin();
 </script>
 
 <MaterialApp teme="ligth"> 
