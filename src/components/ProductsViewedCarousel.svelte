@@ -11,7 +11,7 @@
     const userId = $userStore.id;
     request('productsViewed').post({
       userId: userId,
-      limit: filters,
+      limit: 3,
     }).then((response) => {
       products = response;
     });
