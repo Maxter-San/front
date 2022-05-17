@@ -14,11 +14,6 @@
     HeaderPanelLink,
     HeaderSearch,
     SkipToContent,
-    SideNav,
-    SideNavItems,
-    SideNavMenu,
-    SideNavMenuItem,
-    SideNavLink,
   } from "carbon-components-svelte";
   import HeaderNavItemCustom from './HeaderNavItemCustom.svelte';
   import HeaderPanelLinkCustom from './HeaderPanelLinkCustom.svelte';
@@ -85,7 +80,7 @@
         {#if $userStore}
         <HeaderPanelLinkCustom to="/" text="Mi perfil"/>
         <HeaderPanelLinkCustom to="/ShoppingCart/{$userStore.id}" text="Compras"/>
-        <HeaderPanelLink on:click={logout}>Cerrar sesión</HeaderPanelLink>
+        <HeaderPanelLink on:click={logout} on:click={() => navigate("/")} >Cerrar sesión</HeaderPanelLink>
         {:else}
         <HeaderPanelLinkCustom to="/login" text="Iniciar sesión"/>
         <HeaderPanelLinkCustom to="/sign-up" text="Registrate"/>

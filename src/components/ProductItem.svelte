@@ -47,21 +47,10 @@
 </div> -->
 
 <style>
-  .card-container {
-    position: relative;
-    /* width: 400px; */
-    
-  }
-
   img {
     width: 300px;
     height: 300px;
     object-fit: contain;
-  }
-
-  .image-container {
-    display: flex;
-    overflow: hidden;
   }
 
   .backG {

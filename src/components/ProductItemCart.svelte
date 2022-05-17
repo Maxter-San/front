@@ -4,12 +4,8 @@
     CardTitle,
     CardSubtitle,
   } from 'svelte-materialify';
-  import {
-    NumberInput,
-    Button,
-  } from "carbon-components-svelte";
-  import TrashCan from "carbon-icons-svelte/lib/TrashCan.svelte";
   import ShoppingCartControlsNumberImput from './ShoppingCartControlsNumberImput.svelte';
+  import ShoppingButtonDelete from './ShoppingButtonDelete.svelte';
 
   export let cartProduct;
 
@@ -26,7 +22,7 @@
       <CardTitle>{cartProduct.product.price}</CardTitle>
       <CardSubtitle>{cartProduct.product.name}</CardSubtitle>
       <ShoppingCartControlsNumberImput cartProduct={cartProduct} />
-      <Button tooltipPosition="right" kind="danger-tertiary" iconDescription="Borrar" icon={TrashCan} />
+      <ShoppingButtonDelete cartProduct={cartProduct} />
     </Card>
   </div>
 </div>

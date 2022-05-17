@@ -30,7 +30,7 @@
       <br/>
       <h2>En tendencia</h2>
       <br/>
-      <ProductsCarousel filters={{ limit: '5' }} />
+      <ProductsCarousel filters={{ limit: '10' }} />
       </Column>
     </Row>
     <Row>
