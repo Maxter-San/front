@@ -2,13 +2,13 @@
   import Carousel from 'svelte-carousel'
   // ...
 
-  let images = ["/b01.jpg", "/e01.jpg"];
+  let images = ["/b01.jpg"];
 </script>
 
 <style>
   img {
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: contain;
   }
 </style>

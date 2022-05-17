@@ -5,6 +5,7 @@
 	import Login from "./routes/Login.svelte";
 	import Product from "./routes/Product.svelte";
 	import SignUp from "./routes/SignUp.svelte";
+	import ShoppingCart from "./routes/ShoppingCart.svelte";
 	import { MaterialApp } from 'svelte-materialify';
 	import userStore from './stores/userStore';
 	import { fitsh } from "fitsh";
@@ -19,12 +20,17 @@
 	$: autologin();
 </script>
 
-<MaterialApp teme="ligth"> 
+<style>
+	:global(body) {
+		background-color: #ebebeb !important;
+	}
+</style>
+
 	<Router>
 		<Header />
 		<Route path="/" component={Index} />
 		<Route path="/login" component={Login} />
 		<Route path="/sign-up" component={SignUp} />
 		<Route path="/product/:productId" component={Product} />
+		<Route path="/ShoppingCart/:userId" component={ShoppingCart} />
 	</Router>
-</MaterialApp>

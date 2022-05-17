@@ -1,5 +1,5 @@
 <script>
-  import { Link } from 'svelte-navigator';
+  import { useNavigate } from 'svelte-navigator';
   import userStore from '../stores/userStore';
   import {
     Header,
@@ -20,12 +20,16 @@
     SideNavMenuItem,
     SideNavLink,
   } from "carbon-components-svelte";
+  import HeaderNavItemCustom from './HeaderNavItemCustom.svelte';
+  import HeaderPanelLinkCustom from './HeaderPanelLinkCustom.svelte';
   import {
     UserAvatarFilledAlt, 
     ShoppingCart,
   } from "carbon-icons-svelte";
 
   let isSideNavOpen = false;
+
+  const navigate = useNavigate();
 
 
   function logout() {
@@ -51,36 +55,40 @@
   <!--<HeaderGlobalAction icon={ShoppingCart} /> -->
 
   <HeaderNav>
-    <HeaderNavItem href="/" text="Inicio" />
+    <HeaderNavItemCustom to="/" text="Inicio"/>
     <HeaderNavMenu text="Categorías" >
       <HeaderNavItem text="xd" />
     </HeaderNavMenu>  
     {#if $userStore}
-    <HeaderNavItem text={"Bienvenido/a " + $userStore?.name || ''} />
-    <HeaderNavItem  text={"Carrito: " + $userStore.userCart.items.length + " producto(s)"} />
+      <HeaderNavItem text={"Bienvenido/a " + $userStore?.name || ''} />
+      <HeaderNavItem text={"Carrito: " + $userStore.userCart.items.length + " producto(s)"} />
     {:else}
-    <HeaderNavItem href="/login" text="Iniciar sesión" />
-    <HeaderNavItem href="/sign-up" text="Registrate" />
+      <HeaderNavItemCustom to="/login" text="Iniciar sesión" />
+      <HeaderNavItemCustom to="/sign-up" text="Registrate" />
     {/if}
   </HeaderNav>
 
   <HeaderUtilities>
     <HeaderSearch placeholder="Buscar producto..."></HeaderSearch>
 
-    <HeaderGlobalAction icon={ShoppingCart} />
-  
+    {#if $userStore}
+    <HeaderGlobalAction icon={ShoppingCart} onclick="location.href='/ShoppingCart/{$userStore.id}'" />
+    {:else}
+    <HeaderGlobalAction icon={ShoppingCart} onclick="location.href='/'"  />
+    {/if}
+
     <HeaderAction 
       icon={UserAvatarFilledAlt}
       closeIcon={UserAvatarFilledAlt}>
       <HeaderPanelLinks>
         <HeaderPanelDivider>Mi cuenta</HeaderPanelDivider>
         {#if $userStore}
-        <HeaderPanelLink href="/">Mi perfil</HeaderPanelLink>
-        <HeaderPanelLink href="/">Compras</HeaderPanelLink>
+        <HeaderPanelLinkCustom to="/" text="Mi perfil"/>
+        <HeaderPanelLinkCustom to="/ShoppingCart/{$userStore.id}" text="Compras"/>
         <HeaderPanelLink on:click={logout}>Cerrar sesión</HeaderPanelLink>
         {:else}
-        <HeaderPanelLink href="/login">Iniciar sesión</HeaderPanelLink>
-        <HeaderPanelLink href="/sign-up">Registrate</HeaderPanelLink>
+        <HeaderPanelLinkCustom to="/login" text="Iniciar sesión"/>
+        <HeaderPanelLinkCustom to="/sign-up" text="Registrate"/>
         {/if}
       </HeaderPanelLinks>
     </HeaderAction>
