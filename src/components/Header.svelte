@@ -22,6 +22,7 @@
     ShoppingCart,
   } from "carbon-icons-svelte";
   import SearchProducts from './SearchProducts.svelte';
+  import MenuCategories from './MenuCategories.svelte'
 
   let isSideNavOpen = false;
 
@@ -53,7 +54,9 @@
   <HeaderNav>
     <HeaderNavItemCustom to="/" text="Inicio"/>
     <HeaderNavMenu text="Categorías" >
-      <HeaderNavItem text="xd" />
+
+      <MenuCategories />
+      
     </HeaderNavMenu>  
     {#if $userStore}
       <HeaderNavItem text={"Bienvenido/a " + $userStore?.name || ''} />
@@ -65,14 +68,7 @@
   </HeaderNav>
 
   <HeaderUtilities>
-
-
     <SearchProducts />
-
-
-
-
-
     {#if $userStore}
     <HeaderGlobalAction icon={ShoppingCart} on:click={() => navigate(`/ShoppingCart/${$userStore.id}`)} />
     {:else}
