@@ -12,7 +12,7 @@
   import ProductsViewedCarousel from '../components/ProductsViewedCarousel.svelte';
   import AdCarousel from '../components/AdCarousel.svelte'
   import ProductItem from '../components/ProductItem.svelte';
-import Header from '../components/Header.svelte';
+  import Header from '../components/Header.svelte';
 </script>
 
 <Header />
@@ -35,13 +35,14 @@ import Header from '../components/Header.svelte';
       <ProductsCarousel filters={{ limit: '10', viewsSort: 'desc' }} />
       </Column>
     </Row>
+    <br/>
     <Row>
       <Column lg={1}> </Column>
       <Column lg={14}>
       <br/>
       <h2>Tus últimos productos vistos</h2>
       <br/>
-      <ProductsViewedCarousel filters={{ limit: '3', viewsSort: 'desc' }} />
+      <ProductsViewedCarousel filters={{ limit: '10', viewsSort: 'desc' }} />
       </Column>
     </Row>
   </Grid>

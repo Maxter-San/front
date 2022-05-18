@@ -7,8 +7,11 @@
   } from "carbon-components-svelte";
    import ShoppingCartProducts from '../components/ShoppinCartProducts.svelte';
    import ShoppingCartBuy from '../components/ShoppingCartBuy.svelte'
+import Header from '../components/Header.svelte';
 
 </script>
+
+<Header />
 
 {#if $userStore}
    <br/><br/><br/><br/><br/>

@@ -1,6 +1,7 @@
 <script>
   import { fitsh } from "fitsh"
   import AddProductControls from "../components/AddProductControls.svelte";
+  import Header from "../components/Header.svelte";
   import userStore from '../stores/userStore';
   
   export let productId;
@@ -8,7 +9,7 @@
   let product;
   let loading = true;
 
-  if($userStore){
+  $: if($userStore){
     let userId = $userStore.id;
     fitsh(`http://localhost:3000/product-last-viewed/`).post({
       userId: userId,
@@ -25,6 +26,8 @@
   });
 
 </script>
+
+<Header />
 
 <br/><br/><br/><br/><br/>
 {#if loading}

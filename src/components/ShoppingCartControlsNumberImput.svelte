@@ -20,10 +20,11 @@
 </script>
 
 <NumberInput
+  light
   label="Cantidad:"
-    min={1}
-    value={cartProduct.quantity}
-    invalidText="La cantidad no puede ser menor a 1."
-    bind:ref={quant}
-    on:click={quantityUpdate}
+  min={1}
+  value={cartProduct.quantity}
+  invalidText="La cantidad no puede ser menor a 1."
+  bind:ref={quant}
+  on:click={quantityUpdate}
 />

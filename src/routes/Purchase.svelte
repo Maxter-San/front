@@ -7,7 +7,10 @@
   } from "carbon-components-svelte";
   import ConfirmPurchaseInformation from '../components/ConfirmPurchaseInformation.svelte';
   import ConfirmPurchasePay from '../components/ConfirmPurchasePay.svelte';
+import Header from '../components/Header.svelte';
 </script>
+
+<Header />
 
 {#if $userStore}
   <br/><br/><br/><br/><br/>

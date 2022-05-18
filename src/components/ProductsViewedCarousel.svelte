@@ -30,17 +30,13 @@
     min-height: min-content;
     gap: 6px;
   }
-
-  .item {
-    width: calc(100% / 3);
-  }
 </style>
 
 {#if $userStore}
   <section>
     <div class="box">
       {#each products as product}
-        <div class="item">
+        <div>
           <ProductItem 
             product={product}
           />
