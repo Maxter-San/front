@@ -3,7 +3,7 @@
   import ProductItem from '../components/ProductItem.svelte';
   import request from '../utils/request';
 
-  export let filters;
+  export let filters = {};
 
   let products = [];
 
@@ -11,7 +11,7 @@
     const userId = $userStore.id;
     request('productsViewed').post({
       userId: userId,
-      limit: 10,
+      ...filters,
     }).then((response) => {
       products = response;
     });

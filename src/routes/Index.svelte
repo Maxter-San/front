@@ -30,7 +30,7 @@
       <br/>
       <h2>En tendencia</h2>
       <br/>
-      <ProductsCarousel filters={{ limit: '10' }} />
+      <ProductsCarousel filters={{ limit: '10', viewsSort: 'desc' }} />
       </Column>
     </Row>
     <Row>
@@ -39,7 +39,7 @@
       <br/>
       <h2>Tus últimos productos vistos</h2>
       <br/>
-      <ProductsViewedCarousel filters={{ limit: '3' }} />
+      <ProductsViewedCarousel filters={{ limit: '3', viewsSort: 'desc' }} />
       </Column>
     </Row>
   </Grid>
