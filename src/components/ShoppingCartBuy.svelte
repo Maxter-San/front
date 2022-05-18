@@ -17,16 +17,31 @@
   let cartProducts = [];
   let subtotal = 0;
 
-  $: if($userStore) {
+  $: if($userStore) {   
     let userCartId = $userStore.userCart.id;
     fitsh(`http://localhost:3000/cart`)(userCartId).get().then((data) => {
       cartProducts = data.products;
+      total();
     });
+
   };
 
+  function total () {
+    subtotal=0;
+    cartProducts.forEach(element => {
+      subtotal += element.product.price * element.quantity;
+    });
+  }
 </script>
 
-<div class="justify-center mt-4 mb-4">
+<style>
+  .backG {
+		background-color: #ffffff !important;
+    justify-content: center;
+	}
+</style>
+
+<div class="backG">
   <Card outlined style="max-width:100%;">
     <div class="pl-4 pr-4 pt-4">
       <Grid>
@@ -74,7 +89,7 @@
           <Column />
           <Column />
           <Column>
-            <Button kind="tertiary" icon={ShoppingCartArrowDown}>Comprar</Button>
+            <Button kind="tertiary" icon={ShoppingCartArrowDown} onclick="location.href='/Purchase/{$userStore.id}'">Comprar</Button>
           </Column>
         </Row>
 

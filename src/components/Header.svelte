@@ -21,6 +21,7 @@
     UserAvatarFilledAlt, 
     ShoppingCart,
   } from "carbon-icons-svelte";
+  import SearchProducts from './SearchProducts.svelte';
 
   let isSideNavOpen = false;
 
@@ -64,10 +65,16 @@
   </HeaderNav>
 
   <HeaderUtilities>
-    <HeaderSearch placeholder="Buscar producto..."></HeaderSearch>
+
+
+    <SearchProducts />
+
+
+
+
 
     {#if $userStore}
-    <HeaderGlobalAction icon={ShoppingCart} onclick="location.href='/ShoppingCart/{$userStore.id}'" />
+    <HeaderGlobalAction icon={ShoppingCart} on:click={() => navigate(`/ShoppingCart/${$userStore.id}`)} />
     {:else}
     <HeaderGlobalAction icon={ShoppingCart} onclick="location.href='/'"  />
     {/if}
