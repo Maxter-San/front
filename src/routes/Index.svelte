@@ -12,8 +12,10 @@
   import ProductsViewedCarousel from '../components/ProductsViewedCarousel.svelte';
   import AdCarousel from '../components/AdCarousel.svelte'
   import ProductItem from '../components/ProductItem.svelte';
+import Header from '../components/Header.svelte';
 </script>
 
+<Header />
 
 <h6> </h6>
 <br/><br/><br/>

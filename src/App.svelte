@@ -7,7 +7,7 @@
 	import SignUp from "./routes/SignUp.svelte";
 	import ShoppingCart from "./routes/ShoppingCart.svelte";
 	import Purchase from "./routes/Purchase.svelte";
-	import { MaterialApp } from 'svelte-materialify';
+	import Search from "./routes/Search.svelte";
 	import userStore from './stores/userStore';
 	import { fitsh } from "fitsh";
 
@@ -28,11 +28,11 @@
 </style>
 
 	<Router>
-		<Header />
 		<Route path="/" component={Index} />
 		<Route path="/login" component={Login} />
 		<Route path="/sign-up" component={SignUp} />
 		<Route path="/product/:productId" component={Product} />
 		<Route path="/ShoppingCart/:userId" component={ShoppingCart} />
 		<Route path="/Purchase/:userId" component={Purchase} />
+		<Route path="/Search/:search" component={Search} />
 	</Router>

@@ -1,19 +1,26 @@
 <script>
   import {HeaderSearch} from "carbon-components-svelte";
-  import request from "../utils/request";
+  import { useNavigate, useParams } from 'svelte-navigator';
+  // import request from "../utils/request";
 
-  let timeoutId = 0;
+  const params = useParams();
+  const navigate = useNavigate();
+  let value;
 
   function search() {
-    // request()
+    if(value) {
+      navigate(`/Search/${value}`);
+    }
   }
 
-  function handleChange({ target }) {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      search(target.value);
-    }, 300);
+  function updateValue() {
+    value = $params.search
   }
 </script>
 
-<HeaderSearch placeholder="Buscar producto..." on:input={handleChange} />
+<HeaderSearch 
+  placeholder="Buscar producto..." 
+  on:select={search}
+  on:active={updateValue}
+  bind:value={value}
+/>
