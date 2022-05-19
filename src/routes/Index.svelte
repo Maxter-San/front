@@ -10,7 +10,7 @@
   } from "carbon-components-svelte";
   import ProductsCarousel from '../components/ProductsCarousel.svelte';
   import ProductsViewedCarousel from '../components/ProductsViewedCarousel.svelte';
-  import AdCarousel from '../components/AdCarousel.svelte';
+  import AdCarousel from '../components/adCarousel.svelte';
   import CategorySelection from '../components/CategorySelection.svelte';
   import Header from '../components/Header.svelte';
 </script>

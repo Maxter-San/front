@@ -28,7 +28,7 @@
 </style>
 
 <div class="backG" 
-on:click={() => navigate(`/Category/${category.id}`)}>
+on:click={() => navigate(`/Search?categoryId=${category.id}`)}>
   <div class="d-flex justify-center mt-4 mb-4">
     <Card style="max-width:350px;">
       <img src={category.image} alt="background" />

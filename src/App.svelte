@@ -35,6 +35,6 @@
 		<Route path="/product/:productId" component={Product} />
 		<Route path="/ShoppingCart/:userId" component={ShoppingCart} />
 		<Route path="/Purchase/:userId" component={Purchase} />
-		<Route path="/Search/:search" component={Search} />
+		<Route path="/Search" component={Search} />
 		<Route path="/Category/:categoryId" component={Category} />
 	</Router>

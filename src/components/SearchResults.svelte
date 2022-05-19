@@ -1,22 +1,20 @@
 <script>
-  import { useParams } from "svelte-navigator";
+  import { useLocation } from "svelte-navigator";
   import request from "../utils/request";
   import ProductItem from '../components/ProductItem.svelte';
 
-
   let items = [];
-  const params = useParams();
+  const location = useLocation();
 
-  async function searchProducts() {
-    const response = await request('products').get({ 
-      search: $params.search,
-      viewsSort: $params.viewsSort,
-      categoryId: $params.categoryId,
-    });
+  $: searchParams = new URLSearchParams($location.search);
+
+  $: request('products').get({ 
+    search: searchParams.get('search') || '',
+    viewsSort: searchParams.get('viewsSort') || '',
+    categoryId: searchParams.get('categoryId') || '',
+  }).then((response) => {
     items = response;
-  }
-
-  $: searchProducts();
+  });
 </script>
 
 <style>

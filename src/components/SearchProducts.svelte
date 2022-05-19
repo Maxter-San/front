@@ -1,20 +1,22 @@
 <script>
-  import {HeaderSearch} from "carbon-components-svelte";
-  import { useNavigate, useParams } from 'svelte-navigator';
-  // import request from "../utils/request";
+  import { HeaderSearch } from "carbon-components-svelte";
+  import { useNavigate, useLocation } from 'svelte-navigator';
 
-  const params = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
+
   let value;
+  $: searchParams = new URLSearchParams($location.search);
 
   function search() {
     if(value) {
-      navigate(`/Search/${value}`);
+      searchParams.set('search', value);
+      navigate(`/Search?${searchParams}`);
     }
   }
 
   function updateValue() {
-    value = $params.search
+    value = searchParams.get('search');
   }
 </script>
 
