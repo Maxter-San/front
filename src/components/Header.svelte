@@ -68,7 +68,7 @@
       
     </HeaderNavMenu>  
     {#if $userStore}
-      <HeaderNavItem text={"Bienvenido/a " + $userStore?.name || ''} />
+      <HeaderNavItem text={"Bienvenido/a: " + $userStore?.name || ''} />
       <HeaderNavItem text={"Carrito: " + $userStore.userCart.items.length + " producto(s)"} />
     {:else}
       <HeaderNavItemCustom to="/login" text="Iniciar sesión" />
@@ -90,7 +90,7 @@
       <HeaderPanelLinks>
         <HeaderPanelDivider>Mi cuenta</HeaderPanelDivider>
         {#if $userStore}
-        <HeaderPanelLinkCustom to="/" text="Mi perfil"/>
+        <HeaderPanelLinkCustom to="/MyProfile" text="Mi perfil"/>
         <HeaderPanelLinkCustom to="/ShoppingCart/{$userStore.id}" text="Compras"/>
         <HeaderPanelLink on:click={logout} on:click={() => navigate("/")} >Cerrar sesión</HeaderPanelLink>
         {:else}

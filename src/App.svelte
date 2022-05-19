@@ -9,6 +9,7 @@
 	import Purchase from "./routes/Purchase.svelte";
 	import Search from "./routes/Search.svelte";
 	import Category from "./routes/Category.svelte";
+	import MyProfile from "./routes/MyProfile.svelte";
 	import userStore from './stores/userStore';
 	import { fitsh } from "fitsh";
 
@@ -37,4 +38,5 @@
 		<Route path="/Purchase/:userId" component={Purchase} />
 		<Route path="/Search" component={Search} />
 		<Route path="/Category/:categoryId" component={Category} />
+		<Route path="/MyProfile" component={MyProfile} />
 	</Router>

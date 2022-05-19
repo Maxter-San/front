@@ -121,7 +121,7 @@
         if (detail.text === "Cancelar") open = false;
       }}
        on:click:button={({ detail }) => {
-        if (detail.text === "Aceptar") alert("a");
+        if (detail.text === "Aceptar");
       }}
 
     />
