@@ -11,6 +11,7 @@
 	import Category from "./routes/Category.svelte";
 	import MyProfile from "./routes/MyProfile.svelte";
 	import Purchases from "./routes/Purchases.svelte";
+	import OnBoarding from "./routes/OnBoarding.svelte";
 	import userStore from './stores/userStore';
 	import { fitsh } from "fitsh";
 
@@ -41,4 +42,5 @@
 		<Route path="/Category/:categoryId" component={Category} />
 		<Route path="/MyProfile" component={MyProfile} />
 		<Route path="/Purchases/:userId" component={Purchases} />
+		<Route path="/OnBoarding" component={OnBoarding} />
 	</Router>

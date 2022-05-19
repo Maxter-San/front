@@ -12,7 +12,7 @@
     ModalHeader,
     ModalBody,
     ModalFooter,
-ComposedModal,
+    ComposedModal,
   } from "carbon-components-svelte";
 
   let errorMessage;

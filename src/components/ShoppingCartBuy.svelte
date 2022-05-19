@@ -12,6 +12,10 @@
     Grid,
     Row,
     Column,
+    ComposedModal,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
   } from "carbon-components-svelte";
   import {ShoppingCartArrowDown} from "carbon-icons-svelte"; 
 
@@ -28,6 +32,7 @@
   };
 
   const navigate = useNavigate();
+  let open = false;
 
   function total () {
     subtotal=0;
@@ -35,6 +40,20 @@
       subtotal += element.product.price * element.quantity;
     });
   }
+
+  function validateContactInfo(){
+    if($userStore.address){
+      navigate(`/Purchase/${$userStore.id}`);
+    }
+    else{
+      open=true;
+    }
+  }
+  
+  async function confirm(){
+    open=false;
+    navigate("/MyProfile");
+  };
 </script>
 
 <style>
@@ -92,7 +111,7 @@
           <Column />
           <Column />
           <Column>
-            <Button kind="tertiary" icon={ShoppingCartArrowDown} on:click={() => navigate(`/Purchase/${$userStore.id}`)} >Comprar</Button>
+            <Button kind="tertiary" icon={ShoppingCartArrowDown} on:click={validateContactInfo} >Comprar</Button>
           </Column>
         </Row>
 
@@ -102,3 +121,18 @@
     </div>
   </Card>
 </div>
+
+{#if open}
+  <ComposedModal bind:open on:submit={confirm} preventCloseOnClickOutside >
+    <ModalHeader label="Adosa" title="Para poder avanzar necesitas terminar de llenar tu información de contacto" />
+    <br /><br /><br />
+    <ModalFooter
+      primaryButtonText="Aceptar"
+      secondaryButtonText="En otro momento"
+      on:click:button--secondary={({ detail }) => {
+        if (detail.text === "En otro momento") 
+          navigate("/");
+      }}
+    />
+  </ComposedModal>
+{/if}
