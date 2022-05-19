@@ -12,6 +12,9 @@
 	import MyProfile from "./routes/MyProfile.svelte";
 	import Purchases from "./routes/Purchases.svelte";
 	import OnBoarding from "./routes/OnBoarding.svelte";
+	import AboutUs from "./routes/AboutUs.svelte";
+	import Answers from "./components/Answers.svelte";
+	import CustomerSupport from "./components/CustomerSupport.svelte";
 	import userStore from './stores/userStore';
 	import { fitsh } from "fitsh";
 
@@ -43,4 +46,7 @@
 		<Route path="/MyProfile" component={MyProfile} />
 		<Route path="/Purchases/:userId" component={Purchases} />
 		<Route path="/OnBoarding" component={OnBoarding} />
+		<Route path="/AboutUs" component={AboutUs} />
+		<Route path="/Answers" component={Answers} />
+		<Route path="/CustomerSupport" component={CustomerSupport} />
 	</Router>

@@ -12,11 +12,10 @@
     HeaderPanelLinks,
     HeaderPanelDivider,
     HeaderPanelLink,
-    HeaderSearch,
     SkipToContent,
-ComposedModal,
-ModalHeader,
-ModalFooter,
+    ComposedModal,
+    ModalHeader,
+    ModalFooter,
   } from "carbon-components-svelte";
   import HeaderNavItemCustom from './HeaderNavItemCustom.svelte';
   import HeaderPanelLinkCustom from './HeaderPanelLinkCustom.svelte';
@@ -110,11 +109,11 @@ ModalFooter,
           onclick="window.open('https://www.google.com/maps/search/adosa/@25.6947938,-100.3412174,12.63z', '_blank');" >
           Ubicación
         </HeaderPanelLink>
-        <HeaderPanelLink>Información y política</HeaderPanelLink>
+        <HeaderPanelLinkCustom to="/AboutUs" text="Información y política" />
         <HeaderPanelDivider>Ayuda</HeaderPanelDivider>
-        <HeaderPanelLink>Guia</HeaderPanelLink>
-        <HeaderPanelLink>Preguntas frecuente</HeaderPanelLink>
-        <HeaderPanelLink>Atención y contacto</HeaderPanelLink>
+        <HeaderPanelLinkCustom to="/OnBoarding" text=Guia />
+        <HeaderPanelLinkCustom  to="/Answers" text="Preguntas frecuente" />
+        <HeaderPanelLinkCustom to="/CustomerSupport" text="Atención y contacto" />
       </HeaderPanelLinks>
     </HeaderAction>
   </HeaderUtilities>

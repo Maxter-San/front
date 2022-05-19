@@ -32,7 +32,7 @@
 
     $userStore = response.user;
     localStorage.setItem('userId', response.user.id);
-    navigate("/");
+    navigate("/OnBoarding");
   };
 </script>
 
