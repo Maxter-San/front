@@ -3,7 +3,7 @@
     import userStore from '../stores/userStore';
     import {
     NumberInput,
-  } from "carbon-components-svelte";
+    } from "carbon-components-svelte";
 
   export let cartProduct;
   let quant;

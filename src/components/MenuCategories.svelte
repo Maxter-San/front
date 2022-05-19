@@ -14,5 +14,5 @@
 </script>
 
 {#each categories as category}
-  <HeaderNavItem text="{category.name}" on:click={() => navigate(`/Category/${category.id}`)} />
+  <HeaderNavItem text="{category.name}" on:click={() => navigate(`/Search?categoryId=${category.id}`)} />
 {/each}

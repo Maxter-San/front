@@ -1,9 +1,14 @@
 <script>
-  import { fitsh } from "fitsh"
-  import AddProductControls from "../components/AddProductControls.svelte";
   import Header from "../components/Header.svelte";
+  import {
+    Grid,
+    Row,
+    Column,
+  } from "carbon-components-svelte";
+  import { fitsh } from "fitsh"
   import userStore from '../stores/userStore';
-  
+  import ViewProduct from "../components/ViewProduct.svelte";
+
   export let productId;
 
   let product;
@@ -20,19 +25,36 @@
   $: fitsh(`http://localhost:3000/product-view/`).post({
     productId: productId,
   });
+
   $: fitsh(`http://localhost:3000/product`)(productId).get().then((data) => {
     product = data;
     loading = false;
   });
-
 </script>
+
+<style>
+  .backG {
+		background-color: #ffffff !important;
+	}
+</style>
 
 <Header />
 
-<br/><br/><br/><br/><br/>
 {#if loading}
+  <br/><br/><br/><br/><br/>
   cargando...
 {:else}
-  {JSON.stringify(product)}
-  <AddProductControls productId={productId} />
+  <h6> </h6>
+  <br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/>
+  <Grid>
+    <Row>
+      <Column lg={1} />
+      <Column lg={14}>
+        <div class="backG">
+          <ViewProduct productId={productId} product={product} />
+        </div>
+      </Column>
+    </Row>
+  </Grid>
 {/if}
