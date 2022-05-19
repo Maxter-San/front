@@ -11,6 +11,8 @@
   function search() {
     if(value) {
       searchParams.set('search', value);
+      searchParams.set('viewsSort', '');
+      searchParams.set('categoryId', '');
       navigate(`/Search?${searchParams}`);
     }
   }

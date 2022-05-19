@@ -7,7 +7,9 @@
   const location = useLocation();
 
   $: searchParams = new URLSearchParams($location.search);
-
+  
+  $:  alert(searchParams.get('search') + searchParams.get('viewsSort') + searchParams.get('categoryId'));
+  
   $: request('products').get({ 
     search: searchParams.get('search') || '',
     viewsSort: searchParams.get('viewsSort') || '',

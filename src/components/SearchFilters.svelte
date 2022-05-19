@@ -1,5 +1,5 @@
 <script>
-  import { useNavigate, useParams } from 'svelte-navigator';
+  import { useNavigate, useLocation } from 'svelte-navigator';
   import request from "../utils/request";
   import { 
     Card,
@@ -16,8 +16,10 @@
 
   import {Filter} from "carbon-icons-svelte";
 
-  const params = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
+
+  $: searchParams = new URLSearchParams($location.search);
 
   let value;
   let viewsSort;
@@ -37,16 +39,23 @@
   };
 
   function search() {
-    if($params.search)
-      navigate(`/Search/${value}/${viewsSort}/${categoryId}`);
+    if(value)
+      searchParams.set('search', value);
+      if(viewsSort)
+        searchParams.set('viewsSort', viewsSort);
+      else
+        searchParams.delete('viewsSort');
+      if(categoryId)
+        searchParams.set('categoryId', categoryId);
+      else
+        searchParams.delete('categoryId');
+      navigate(`/Search?${searchParams}`);
   };
 
-  $:updateValue();
-
   function updateValue() {
-    value = $params.search;
-    viewsSort = $params.viewsSort;
-    categoryId = $params.categoryId;
+    value = searchParams.get('search');
+    viewsSort = searchParams.get('viewsSort');
+    categoryId = searchParams.get('categoryId');
   };
 </script>
 
