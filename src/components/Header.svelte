@@ -14,6 +14,9 @@
     HeaderPanelLink,
     HeaderSearch,
     SkipToContent,
+ComposedModal,
+ModalHeader,
+ModalFooter,
   } from "carbon-components-svelte";
   import HeaderNavItemCustom from './HeaderNavItemCustom.svelte';
   import HeaderPanelLinkCustom from './HeaderPanelLinkCustom.svelte';
@@ -28,21 +31,20 @@
 
   const navigate = useNavigate();
 
+  let open = false;
 
   function logout() {
     $userStore = null;
     localStorage.removeItem('userId'); 
   }
 
-  //<Link to="/sign-up">Registrate</Link>
+  function openModal(){
+    open=true;
+  }
+  function close(){
+    open=false;
+  }
 </script>
-
-<!-- <style>
-  img {
-    max-width: 50%;
-    max-height: 50%;
-}
-</style> -->
 
 <svelte:head>
   <link
@@ -81,7 +83,7 @@
     {#if $userStore}
     <HeaderGlobalAction icon={ShoppingCart} on:click={() => navigate(`/ShoppingCart/${$userStore.id}`)} />
     {:else}
-    <HeaderGlobalAction icon={ShoppingCart} on:click={() => navigate(`/`)} />
+    <HeaderGlobalAction icon={ShoppingCart} on:click={openModal} />
     {/if}
 
     <HeaderAction 
@@ -91,7 +93,7 @@
         <HeaderPanelDivider>Mi cuenta</HeaderPanelDivider>
         {#if $userStore}
         <HeaderPanelLinkCustom to="/MyProfile" text="Mi perfil"/>
-        <HeaderPanelLinkCustom to="/ShoppingCart/{$userStore.id}" text="Compras"/>
+        <HeaderPanelLinkCustom to="/Purchases/{$userStore.id}" text="Compras"/>
         <HeaderPanelLink on:click={logout} on:click={() => navigate("/")} >Cerrar sesión</HeaderPanelLink>
         {:else}
         <HeaderPanelLinkCustom to="/login" text="Iniciar sesión"/>
@@ -118,3 +120,13 @@
   </HeaderUtilities>
 </Header>
 <hr />
+
+{#if open}
+  <ComposedModal bind:open on:submit={close} preventCloseOnClickOutside >
+    <ModalHeader label="Adosa" title="Para poder comprar debes estar registrado" />
+    <br /><br /><br />
+    <ModalFooter
+      primaryButtonText="Aceptar"
+    />
+  </ComposedModal>
+{/if}

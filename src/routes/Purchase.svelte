@@ -31,8 +31,6 @@ import Header from '../components/Header.svelte';
       </Column>
     </Row>
   </Grid>
-
-
 {/if}
 
 
