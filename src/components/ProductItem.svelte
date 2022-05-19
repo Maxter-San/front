@@ -1,4 +1,5 @@
 <script>
+  import { useNavigate } from 'svelte-navigator';
   import { 
     Card,
     CardTitle,
@@ -7,17 +8,16 @@
 
   export let product;
 
-  let active = false;
-  function toggle() {
-    active = !active;
-  }
+  const navigate = useNavigate();
+
 </script>
 
-<div class="backG" onclick="location.href='/product/{product.id}'">
+<div class="backG" 
+on:click={() => navigate(`/product/${product.id}`)}>
   <div class="d-flex justify-center mt-4 mb-4">
     <Card style="max-width:350px;">
       <img src={product.photo} alt="background" />
-      <CardTitle>{product.price}</CardTitle>
+      <CardTitle>$ {product.price}</CardTitle>
       <CardSubtitle>{product.name}</CardSubtitle>
     </Card>
   </div>

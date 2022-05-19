@@ -9,6 +9,10 @@
     Column,
   } from "carbon-components-svelte";
 
+  function substraer (text) {
+    return text.substr(12);
+  };
+
 </script>
 
 <style>
@@ -41,7 +45,7 @@
             <span class="text-overline">Tarjeta:</span>
           </Column>
           <Column>
-            <span class="text-overline">**** **** **** 0123</span>
+            <span class="text-overline">**** **** **** {substraer($userStore.card)}</span>
           </Column>       
         </Row>
         <br /><hr /><br />

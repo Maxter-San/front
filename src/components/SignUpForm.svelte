@@ -15,7 +15,7 @@
     Column,
     ToastNotification,
   } from "carbon-components-svelte";
-  import {Login} from "carbon-icons-svelte";
+  import {UserFollow} from "carbon-icons-svelte";
 
   const dispatch = createEventDispatcher();
 
@@ -102,7 +102,7 @@
                 />
               </FluidForm>
               <br />
-              <Button kind="tertiary" icon={Login} on:click={onClick} >Registrarse</Button>
+              <Button kind="tertiary" icon={UserFollow} on:click={onClick} >Registrarse</Button>
               <br />
             </Column>
           </Row>

@@ -1,5 +1,6 @@
 <script>
   import userStore from '../stores/userStore';
+  import { useNavigate } from 'svelte-navigator';
   import { fitsh } from 'fitsh';
   import { 
     Card,
@@ -25,6 +26,8 @@
     });
 
   };
+
+  const navigate = useNavigate();
 
   function total () {
     subtotal=0;
@@ -89,7 +92,7 @@
           <Column />
           <Column />
           <Column>
-            <Button kind="tertiary" icon={ShoppingCartArrowDown} onclick="location.href='/Purchase/{$userStore.id}'">Comprar</Button>
+            <Button kind="tertiary" icon={ShoppingCartArrowDown} on:click={() => navigate(`/Purchase/${$userStore.id}`)} >Comprar</Button>
           </Column>
         </Row>
 

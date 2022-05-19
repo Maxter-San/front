@@ -26,6 +26,7 @@ import Header from '../components/Header.svelte';
             <ShoppingCartProducts />
          </Column>
       </Row>
+      <br/>
       <Row>
          <Column lg={1}> </Column>
          <Column lg={14}>

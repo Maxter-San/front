@@ -1,6 +1,7 @@
 <script>
   import userStore from '../stores/userStore';
   import { useNavigate } from 'svelte-navigator';
+  import { fitsh } from 'fitsh';
   import { 
     Card,
   } from 'svelte-materialify';
@@ -28,6 +29,24 @@
     navigate("/");
   };
 
+  let cartProducts = [];
+  let totalPay = 0;
+
+  $: if($userStore) {   
+    let userCartId = $userStore.userCart.id;
+    fitsh(`http://localhost:3000/cart`)(userCartId).get().then((data) => {
+      cartProducts = data.products;
+      total();
+    });
+
+  };
+
+  function total () {
+    totalPay=0;
+    cartProducts.forEach(element => {
+      totalPay += element.product.price * element.quantity;
+    });
+  };
 </script>
 
 <style>
@@ -52,7 +71,7 @@
             <span class="text-overline">Subtotal: </span>
           </Column> 
           <Column>
-            <span class="text-overline">$ </span>
+            <span class="text-overline">$ {totalPay}</span>
           </Column>
         </Row>  
         <Row>
@@ -75,7 +94,7 @@
             <span class="text-overline">Total: </span>
           </Column>
           <Column>
-            <span class="text-overline">$ dinero xd </span>
+            <span class="text-overline">$ {totalPay} </span>
           </Column>
         </Row>
         <br />

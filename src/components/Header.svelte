@@ -37,6 +37,13 @@
   //<Link to="/sign-up">Registrate</Link>
 </script>
 
+<!-- <style>
+  img {
+    max-width: 50%;
+    max-height: 50%;
+}
+</style> -->
+
 <svelte:head>
   <link
     rel="stylesheet"
@@ -44,12 +51,14 @@
   />
 </svelte:head>
 
-<Header company="Adosa" platformName="Compras online" bind:isSideNavOpen>
+<Header company="ADOSA" platformName="Compras online" bind:isSideNavOpen>
   <svelte:fragment slot="skip-to-content">
     <SkipToContent />
   </svelte:fragment>
 
-  <!--<HeaderGlobalAction icon={ShoppingCart} /> -->
+  <!-- <HeaderGlobalAction>
+    <img src="/logo.png" alt="ad01" />
+  </HeaderGlobalAction> -->
 
   <HeaderNav>
     <HeaderNavItemCustom to="/" text="Inicio"/>
@@ -72,7 +81,7 @@
     {#if $userStore}
     <HeaderGlobalAction icon={ShoppingCart} on:click={() => navigate(`/ShoppingCart/${$userStore.id}`)} />
     {:else}
-    <HeaderGlobalAction icon={ShoppingCart} onclick="location.href='/'"  />
+    <HeaderGlobalAction icon={ShoppingCart} on:click={() => navigate(`/`)} />
     {/if}
 
     <HeaderAction 
@@ -93,9 +102,17 @@
 
     <HeaderAction>
       <HeaderPanelLinks>
+        <HeaderPanelDivider>Sobre nosotros</HeaderPanelDivider>
+        <HeaderPanelLink 
+          target="_blank"
+          onclick="window.open('https://www.google.com/maps/search/adosa/@25.6947938,-100.3412174,12.63z', '_blank');" >
+          Ubicación
+        </HeaderPanelLink>
+        <HeaderPanelLink>Información y política</HeaderPanelLink>
         <HeaderPanelDivider>Ayuda</HeaderPanelDivider>
         <HeaderPanelLink>Guia</HeaderPanelLink>
         <HeaderPanelLink>Preguntas frecuente</HeaderPanelLink>
+        <HeaderPanelLink>Atención y contacto</HeaderPanelLink>
       </HeaderPanelLinks>
     </HeaderAction>
   </HeaderUtilities>

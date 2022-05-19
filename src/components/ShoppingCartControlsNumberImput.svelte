@@ -9,7 +9,7 @@
   let quant;
 
   async function quantityUpdate(){
-    const updatedUser = await request(`cart/${$userStore.userCart.id}/items`).post({
+    const updatedUser = await request(`cart/${$userStore.userCart.id}/update`).post({
       productId: cartProduct.productId,
       quantity: quant.value,
     });

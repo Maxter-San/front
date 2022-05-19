@@ -7,22 +7,34 @@
   let items = [];
   const params = useParams();
 
-  async function searchProducts(search) {
-    const response = await request('products').get({ search });
+  async function searchProducts() {
+    const response = await request('products').get({ 
+      search: $params.search,
+      viewsSort: $params.viewsSort,
+      categoryId: $params.categoryId,
+    });
     items = response;
   }
 
-  $: searchProducts($params.search);
+  $: searchProducts();
 </script>
 
-<section>
-  <div class="box">
-    {#each items as product}
-      <div class="item">
-        <ProductItem 
-          product={product}
-        />
-      </div>
-    {/each}
-  </div>
-</section>
+<style>
+  .box {
+    display: flex;
+    overflow: auto;
+    flex-wrap: wrap;
+    min-height: min-content;
+    gap: 2.83%;
+  }
+</style>
+
+<div class="box">
+  {#each items as product}
+    <div class="item">
+      <ProductItem 
+        product={product}
+      />
+    </div>
+  {/each}
+</div>
