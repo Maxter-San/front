@@ -78,12 +78,22 @@
       </Column>
     </Row>
     <br /><br /><br />
+    {#if product.salable}
       <Row>
         <Column lg={3} />
         <Column lg={10}>
           <Button kind="tertiary" icon={ShoppingCartPlus} on:click={onClick} >Agregar producto al carrito</Button>
         </Column>
       </Row>
+    {:else}
+      <Row>
+        <Column lg={3} />
+        <Column lg={10}>
+          <Button kind="tertiary" icon={ShoppingCartPlus} disabled >Este producto está agotado</Button>
+        </Column>
+      </Row>
+
+    {/if}
   {:else}
     <Row>
       <Column lg={1} />
