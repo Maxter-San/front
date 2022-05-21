@@ -38,11 +38,7 @@
               Abastecedora de Oficinas S.A. de C.V. fue fundada en Monterrey N.L. en 1947 como una pequeña Papelería al Menudeo de Artículos de Oficina y como complemento a una Imprenta instalada en un local contiguo, que además de hacer Trabajos de Impresión, comercializaba Productos para Artes Gráficas tales como Papeles, Sobres, Tintas Etc.
             </p>
           </AccordionItem>
-          <AccordionItem title="Da tu opinión">
-            <p>
-              Para nosotros es muy importante tu opinión, por eso te invitamos a enviar un correo para que nos cuentes como fue tu experiencia.
-            </p>
-          </AccordionItem>
+
         </Accordion>
       </div>
     </Column>
