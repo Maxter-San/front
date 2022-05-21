@@ -46,7 +46,7 @@
       <span class="text-overline">Categoría:</span>
     </Column>
     <Column lg={6}>
-      {#if product.categoryId == 1 || product.categoryId == 2}
+      <!-- {#if product.categoryId == 1 || product.categoryId == 2}
         <Chip label outlined class="ma-2 primary-text">{product.category.name}</Chip>
       {:else if product.categoryId == 3 || product.categoryId == 4}
         <Chip label outlined class="ma-2 secondary-text">{product.category.name}</Chip>
@@ -56,7 +56,7 @@
         <Chip label outlined class="ma-2 red-text">{product.category.name}</Chip>
       {:else if product.categoryId > 8}
         <Chip label outlined class="ma-2">{product.category.name}</Chip>
-      {/if}
+      {/if} -->
     </Column>
   </Row>
 </Grid>
