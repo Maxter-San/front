@@ -26,15 +26,12 @@
     gap: 6px;
   }
 
-  .item {
-    width: calc(100% / 3);
-  }
 </style>
 
 <section>
   <div class="box">
     {#each products as product}
-      <div class="item">
+      <div>
         <ProductItem 
           product={product}
         />
