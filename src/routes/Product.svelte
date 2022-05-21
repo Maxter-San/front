@@ -31,6 +31,18 @@
     product = data;
     loading = false;
   });
+
+  window.jQuery(document).ready(function(){
+      var div = window.jQuery("#animacion");
+      function loop() {
+        div.animate({height: '300px', opacity: '0.2'}, "slow");
+        div.animate({width: '300px', opacity: '0.4'}, "slow");
+        div.animate({height: '100px', opacity: '0.2'}, "slow");
+        div.animate({width: '100px', opacity: '0.4'}, "slow");
+        loop();
+      }
+      loop();
+  });
 </script>
 
 <style>
@@ -43,7 +55,14 @@
 
 {#if loading}
   <br/><br/><br/><br/><br/>
-  cargando...
+  <div style="background:#759eff;
+  height:100px;
+  width:100px;
+  margin: auto;
+    margin-bottom: auto;
+    margin-top: 16%;
+    text-align: center"
+    id="animacion">cargando...</div>
 {:else}
   <h6> </h6>
   <br/><br/><br/><br/><br/>
