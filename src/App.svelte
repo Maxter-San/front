@@ -16,12 +16,12 @@
 	import Answers from "./components/Answers.svelte";
 	import CustomerSupport from "./components/CustomerSupport.svelte";
 	import userStore from './stores/userStore';
-	import { fitsh } from "fitsh";
+	import request from './utils/request';
 
 	function autologin() {
 		const userId = localStorage.getItem('userId');
 		if (!userId) return;
-		fitsh(`http://localhost:3000/loggedUser`)(userId).get().then((data) => {
+		request('loggedUser')(userId).get().then((data) => {
     	$userStore = data;
   	});
 	};

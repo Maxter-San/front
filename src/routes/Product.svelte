@@ -6,6 +6,7 @@
     Column,
   } from "carbon-components-svelte";
   import { fitsh } from "fitsh"
+  import request from '../utils/request';
   import userStore from '../stores/userStore';
   import ViewProduct from "../components/ViewProduct.svelte";
 
@@ -16,17 +17,17 @@
 
   $: if($userStore){
     let userId = $userStore.id;
-    fitsh(`http://localhost:3000/product-last-viewed/`).post({
+    request(`product-last-viewed`).post({
       userId: userId,
       productId: productId,
     });
   }
 
-  $: fitsh(`http://localhost:3000/product-view/`).post({
+  $: request(`product-view`).post({
     productId: productId,
   });
 
-  $: fitsh(`http://localhost:3000/product`)(productId).get().then((data) => {
+  $: request(`product`)(productId).get().then((data) => {
     product = data;
     loading = false;
   });

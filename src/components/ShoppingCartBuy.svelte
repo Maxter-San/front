@@ -18,13 +18,14 @@
     ModalFooter,
   } from "carbon-components-svelte";
   import {ShoppingCartArrowDown} from "carbon-icons-svelte"; 
+  import request from '../utils/request';
 
   let cartProducts = [];
   let subtotal = 0;
 
   $: if($userStore) {   
     let userCartId = $userStore.userCart.id;
-    fitsh(`http://localhost:3000/cart`)(userCartId).get().then((data) => {
+    request(`cart`)(userCartId).get().then((data) => {
       cartProducts = data.products;
       total();
     });

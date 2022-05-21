@@ -1,13 +1,14 @@
 <script>
   import userStore from '../stores/userStore';
   import { fitsh } from 'fitsh';
+  import request from '../utils/request';
   import ProductItemCart from '../components/ProductItemCart.svelte';
 
   let cartProducts = [];
 
   $: if($userStore) {
     let userCartId = $userStore.userCart.id;
-    fitsh(`http://localhost:3000/cart`)(userCartId).get().then((data) => {
+    request(`cart`)(userCartId).get().then((data) => {
       cartProducts = data.products;
     });
   };
