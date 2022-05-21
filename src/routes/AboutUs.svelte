@@ -40,7 +40,7 @@
     <Column lg={14}>
       <br/>
         <h2>Sobre nosotros</h2>
-        <Button><button>No me interesa</button></Button>
+        <Button kind="danger-tertiary"><button>No me interesa</button></Button>
       <br/><br/>
       <div id="div1">
       <div class="backG">
