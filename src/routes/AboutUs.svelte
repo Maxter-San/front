@@ -6,7 +6,21 @@
     Column,
     Accordion, 
     AccordionItem,
+    Button,
   } from "carbon-components-svelte";
+
+  window.jQuery(document).ready(function(){
+    window.jQuery("button").click(function(){
+    window.jQuery.ajax({url: "https://httpbin.org/post",
+    	type:"POST",
+    	error:function(result){	
+    	},
+    success: function(result){
+      window.jQuery("#div1").html(result);
+    }});
+
+  });
+});
 </script>
 
 <style>
@@ -19,13 +33,16 @@
 
 <h6> </h6>
 <br/><br/><br/><br/><br/>
+
 <Grid>
   <Row>
     <Column lg={1} />
     <Column lg={14}>
       <br/>
         <h2>Sobre nosotros</h2>
+        <Button><button>No me interesa</button></Button>
       <br/><br/>
+      <div id="div1">
       <div class="backG">
         <Accordion>
           <AccordionItem title="Quiénes somos">
@@ -45,6 +62,7 @@
           </AccordionItem>
         </Accordion>
       </div>
+    </div>
     </Column>
   </Row>
 </Grid>
