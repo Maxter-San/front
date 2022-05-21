@@ -1,21 +1,17 @@
 <script>
-  import {navigate} from "svelte-navigator";
+  import { navigate } from "svelte-navigator";
+  import request from './utils/request';
 
   let productId;
 
 	let products = [];
-	$: fetch("http://localhost:3000/products?sortByViews=desc").then(res => res.json()).then(data => products = data);
+	$: request("products").get({ sortByViews: desc }).then((data) => {
+    products = data;
+  });
 
   async function fetchProduct() {
-    const res = await fetch("http://localhost:3000/product_view", {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        productId: 1,
-      })
+    const res = await request("product_view").post({
+      productId: 1,
     });
     location.reload();
 

@@ -1,14 +1,13 @@
 <script>
-  import { fitsh } from 'fitsh';
   import ProductItem from '../components/ProductItem.svelte';
-
   import userStore from '../stores/userStore';
+  import request from '../utils/request';
 
   export let filters;
 
   let products = [];
 
-  $: fitsh('http://localhost:3000/products').get(filters).then((response) => {
+  $: request('products').get(filters).then((response) => {
     products = response;
   });
   

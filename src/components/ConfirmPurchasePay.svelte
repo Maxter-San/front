@@ -1,7 +1,6 @@
 <script>
   import userStore from '../stores/userStore';
   import { useNavigate } from 'svelte-navigator';
-  import { fitsh } from 'fitsh';
   import { 
     Card,
   } from 'svelte-materialify';
@@ -34,7 +33,7 @@
 
   $: if($userStore) {   
     let userCartId = $userStore.userCart.id;
-    fitsh(`http://localhost:3000/cart`)(userCartId).get().then((data) => {
+    request(`cart`)(userCartId).get().then((data) => {
       cartProducts = data.products;
       total();
     });

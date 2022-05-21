@@ -2,7 +2,7 @@
   import Carousel from 'svelte-carousel'
   // ...
 
-  let images = ["./Ads/01.jpg", "./Ads/02.jpg", "./Ads/03.jpg", "./Ads/04.jpg", "./Ads/05.jpg", "./Ads/06.jpg", "./Ads/07.jpg"];
+  let images = ["/Ads/01.jpg", "/Ads/02.jpg", "/Ads/03.jpg", "/Ads/04.jpg", "/Ads/05.jpg", "/Ads/06.jpg", "/Ads/07.jpg"];
 </script>
 
 <style>
