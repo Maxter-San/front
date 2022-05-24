@@ -74,7 +74,7 @@
   />
 </svelte:head>
 
-<Header company="The8Imperium" platformName="Curses & Sweet Lies">
+<Header company="The8Imperium " platformName="Curses & Sweet Lies">
   <svelte:fragment slot="skip-to-content">
     <SkipToContent />
   </svelte:fragment>
