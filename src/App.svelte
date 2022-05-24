@@ -15,6 +15,7 @@
 	import AboutUs from "./routes/AboutUs.svelte";
 	import Answers from "./components/Answers.svelte";
 	import CustomerSupport from "./components/CustomerSupport.svelte";
+	import CursesAndSweetLies from "./routes/CursesAndSweetLies.svelte";
 	import userStore from './stores/userStore';
 	import request from './utils/request';
 
@@ -30,7 +31,8 @@
 
 <style>
 	:global(body) {
-		background-color: #ebebeb !important;
+		/* background-color: #ebebeb !important; */
+		background-color: rgb(37, 37, 37) !important;
 	}
 </style>
 
@@ -49,4 +51,5 @@
 		<Route path="/AboutUs" component={AboutUs} />
 		<Route path="/Answers" component={Answers} />
 		<Route path="/CustomerSupport" component={CustomerSupport} />
+		<Route path="/CursesAndSweetLies" component={CursesAndSweetLies} />
 	</Router>
