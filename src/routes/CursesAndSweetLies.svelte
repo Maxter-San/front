@@ -35,12 +35,12 @@
 
 <style>
   .backG {
-		background-color: rgba(255, 255, 255, 0.4) !important;
+		background-color: rgba(255, 255, 255, 0.5) !important;
     border-radius: 10px;
 	}
 
   .backG:hover {
-    background-color: rgba(255, 255, 255, 0.5) !important;
+    background-color: rgb(199 199 201) !important;
   }
 
   .img {
@@ -131,9 +131,10 @@
               <img class="img" src="https://video.fntr6-1.fna.fbcdn.net/v/t39.30808-6/284012687_115094487871919_2296298484457789714_n.png?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFVaw1VlOXvqdMmOJzGug5gHLRdqyPaGeoctF2rI9oZ6jvXq-iUVzM6P7yAWOot4asVnJp5CTDjnccC9fFQ4KXn&_nc_ohc=OIpihhl70rIAX_bJNCx&_nc_oc=AQlUoD-9QqgXyzP0XqsYcQ1b4tzb3-XevE44h0JMXNksTyZBYMqVnYNojzZAXPJJDkI&_nc_ht=video.fntr6-1.fna&oh=00_AT_LiYost31aZfCJbn1RB8B2hOynQBxhuNhk9e6X8XDAcQ&oe=62916EC4" alt="background" />              
             </Column>
             <Column>
-              <span class="text-h5 mb-2">asdfghjk</span>
               <br />
-              <span class="text-overline">asdfghj</span>
+              <span class="text-h5 mb-2">Spring Boy #D</span>
+              <br />
+              <span class="text-overline">Equipado para la guerra, puro personaje, demostrando a mi país que somos los más leales.</span>
               
             </Column>
             <Column lg={1} />
@@ -151,9 +152,10 @@
           <Row>
             <Column lg={1} />
             <Column>
-              <span class="text-h5 mb-2">asdfghjk</span>
               <br />
-              <span class="text-overline">asdfghj</span>
+              <span class="text-h5 mb-2">Strange Human #N</span>
+              <br />
+              <span class="text-overline">Odian a los villanos, sin saber realmente que es lo que los mueve a hacer tales acciones.</span>
             </Column>
             <Column lg={7}>
               <img class="img" src="https://video.fntr6-1.fna.fbcdn.net/v/t39.30808-6/283831087_115094267871941_4357644349877877543_n.png?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGF_6pLpz0VDjnXaackZPalAD5Vl6wesgcAPlWXrB6yB-j9gcxSan7ANI7U2f3TbVQuCDf3ifzNdXeJJi1sPg98&_nc_ohc=6xqfsORy-9oAX81CGCk&tn=s-UYgS_lySr5LbDJ&_nc_ht=video.fntr6-1.fna&oh=00_AT-eNJgCvu3oY9dKkVe9W63Ei6fI81r1TEnbkBOKZ369TA&oe=629057D2" alt="background" />
