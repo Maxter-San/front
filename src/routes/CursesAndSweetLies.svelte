@@ -54,7 +54,7 @@
   }
 
   .divImg {
-    background-image: url("https://video.fntr6-3.fna.fbcdn.net/v/t39.30808-6/283675777_114752501239451_9102926716176282627_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeEwjIaVjtKNjAsYGbn1-HglImQ27mUZrHIiZDbuZRmsctjhhevMSsOBGbOdGkTR_J4LSAR3zDS3Agdhw2dY1KBB&_nc_ohc=vSO13J2maAsAX9WBGWl&_nc_ht=video.fntr6-3.fna&oh=00_AT8cV_bVw_oyVCmjdTQ_0WnCCjVoiuGXMVMTTahhCn_Vzw&oe=6290EDFC");
+    background-image: url("https://video.fntr8-1.fna.fbcdn.net/v/t39.30808-6/283675777_114752501239451_9102926716176282627_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeEwjIaVjtKNjAsYGbn1-HglImQ27mUZrHIiZDbuZRmsctjhhevMSsOBGbOdGkTR_J4LSAR3zDS3Agdhw2dY1KBB&_nc_ohc=taTGMcSx5pQAX9i-BuP&_nc_ht=video.fntr8-1.fna&oh=00_AT-X1gb_awtWFJonVQFQZCaUxOclwfiF9sla1ZJ2bQonFA&oe=6296DCBC");
     background-size: 100% auto;
     background-repeat:no-repeat;
   }
@@ -158,7 +158,7 @@
               <span class="text-overline">Odian a los villanos, sin saber realmente que es lo que los mueve a hacer tales acciones.</span>
             </Column>
             <Column lg={7}>
-              <img class="img" src="https://video.fntr6-1.fna.fbcdn.net/v/t39.30808-6/283831087_115094267871941_4357644349877877543_n.png?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGF_6pLpz0VDjnXaackZPalAD5Vl6wesgcAPlWXrB6yB-j9gcxSan7ANI7U2f3TbVQuCDf3ifzNdXeJJi1sPg98&_nc_ohc=6xqfsORy-9oAX81CGCk&tn=s-UYgS_lySr5LbDJ&_nc_ht=video.fntr6-1.fna&oh=00_AT-eNJgCvu3oY9dKkVe9W63Ei6fI81r1TEnbkBOKZ369TA&oe=629057D2" alt="background" />
+              <img class="img" src="https://video.fntr8-1.fna.fbcdn.net/v/t39.30808-6/283831087_115094267871941_4357644349877877543_n.png?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGF_6pLpz0VDjnXaackZPalAD5Vl6wesgcAPlWXrB6yB-j9gcxSan7ANI7U2f3TbVQuCDf3ifzNdXeJJi1sPg98&_nc_ohc=oOaihY4mRT8AX_BzrcN&_nc_ht=video.fntr8-1.fna&oh=00_AT-8ZTmRIpP08i3GSrjBIF80zI73JFGFcf2EwqEXMPKgyQ&oe=62964692" alt="background" />
             </Column>
             <Column lg={1} />
           </Row>
@@ -229,8 +229,31 @@
   </Row>
   <br/><br/><br/><br/>
   <Row>
-    <Column>
-     aqui va el video
+    <Column lg={1} />
+    <Column lg={14}>
+      <div class="backG">   
+      <Grid>
+        <Row>
+          <Column lg={3} />
+          <Column>      
+            <br /><br />
+            <span class="text-h5 mb-2">¡Gracias a todo el staff por hacer esto posible!</span> 
+            <br /><br />
+
+              <iframe 
+              width="840" height="472" 
+              src="https://www.youtube.com/embed/QGaLSwNIX7w" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>
+
+              <br /><br />     
+          </Column>
+          <Column lg={1} />
+        </Row>
+      </Grid>
+    </div>
     </Column>
   </Row>
 </Grid>
