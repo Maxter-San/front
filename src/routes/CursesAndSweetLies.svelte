@@ -230,7 +230,7 @@
   <br/><br/><br/><br/>
   <Row>
     <Column>
-    
+     aqui va el video
     </Column>
   </Row>
 </Grid>
